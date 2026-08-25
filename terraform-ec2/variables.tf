@@ -1,5 +1,4 @@
-variable "instance_type" {
-  description = "EC2 Instance Type"
+variable "env_type" {
+  description = "Environment Type"
   type        = string
-  default     = "t2.micro"
 }

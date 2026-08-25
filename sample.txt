@@ -1,1 +1,3 @@
 Terraform
+
+terraform apply -var "instance_type=t2.micro"
