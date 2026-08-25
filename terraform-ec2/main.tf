@@ -31,6 +31,6 @@ resource "aws_instance" "terraform-example" {
   vpc_security_group_ids = [aws_security_group.terraform_all.id]
 
   tags = {
-    Name = "terraform-${env_type}-server"
+    Name = "terraform-${var.env_type}-server"
   }
 }
