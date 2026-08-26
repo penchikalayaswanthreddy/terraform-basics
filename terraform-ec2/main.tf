@@ -25,12 +25,14 @@ resource "aws_security_group" "terraform_all" {
 
 
 
-resource "aws_instance" "terraform-example" {
+resource "aws_instance" "terraform_example" {
+  count = length(var.instance_names)
+
   ami                    = "ami-0220d79f3f480ecf5"
-  instance_type          =  var.env_type == "prod" ? "t3.micro" : "t2.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.terraform_all.id]
 
   tags = {
-    Name = "terraform-${var.env_type}-server"
+    Name = var.instance_names[count.index]
   }
 }
