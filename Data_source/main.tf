@@ -1,12 +1,7 @@
-# Data Source
-data "aws_security_group" "allow_all_traffic" {
-  filter {
-    name   = "group-name"
-    values = ["Allow_all_traffic"]
-  }
+data "aws_instance" "example" {
+  instance_id = "i-0159bc205155bb21f"
 }
 
-# Output Security Group ID
-output "security_group_id" {
-  value = data.aws_security_group.allow_all_traffic.id
+output "instance_details" {
+  value = data.aws_instance.example.public_ip
 }
