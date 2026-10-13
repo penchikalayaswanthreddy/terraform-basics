@@ -1,3 +1,3 @@
-output project_name {
-    value = var.project
+output dep_name {
+    value = local.deploy_name
 }
