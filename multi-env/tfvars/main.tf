@@ -5,7 +5,7 @@ resource "aws_instance" "terraform_example" {
   vpc_security_group_ids = ["sg-06768f041e8b8b319"]
 
   tags = {
-  Name        = local.env_name
+  Name        = local.tags
 }
 
  
